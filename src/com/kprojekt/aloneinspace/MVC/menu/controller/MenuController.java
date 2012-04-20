@@ -46,12 +46,12 @@ public class MenuController extends AloneSpaceInput
 		}
 		if( howX > 50 )
 		{
-			this.model.activateSelected( true );
+			this.model.activateSelected();
 			this.resetMoved();
 		}
 		if( howX < -50 )
 		{
-			this.model.activateSelected( false );
+			this.model.deactivateSelected();
 			this.resetMoved();
 		}
 		return true;

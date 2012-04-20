@@ -22,18 +22,6 @@ public class MenuModel
 		}
 	}
 
-	private boolean isAnySelected()
-	{
-		for( MenuItem tmp : this.menuItems )
-		{
-			if( tmp.isSelected() )
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-
 	public List<MenuItem> getMenuItems()
 	{
 		return this.menuItems;
@@ -73,16 +61,42 @@ public class MenuModel
 		}
 	}
 
-	public void activateSelected( boolean b )
+	/**
+	 * @return Action of the activated element
+	 * @throws Exception if no item was selected 
+	 */
+	public void activateSelected()
 	{
 		for( MenuItem item : this.menuItems )
 		{
 			if( item.isSelected() )
 			{
-				item.activate( b );
+				item.activate( true );
 			}
 		}
+	}
 
+	private boolean isAnySelected()
+	{
+		for( MenuItem tmp : this.menuItems )
+		{
+			if( tmp.isSelected() )
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void deactivateSelected()
+	{
+		for( MenuItem item : this.menuItems )
+		{
+			if( item.isSelected() )
+			{
+				item.activate( false );
+			}
+		}
 	}
 
 }

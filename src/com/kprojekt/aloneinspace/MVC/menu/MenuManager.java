@@ -4,19 +4,19 @@ import com.badlogic.gdx.Gdx;
 import com.kprojekt.aloneinspace.MVC.AllData;
 import com.kprojekt.aloneinspace.MVC.Manager;
 import com.kprojekt.aloneinspace.MVC.menu.controller.MenuController;
-import com.kprojekt.aloneinspace.MVC.menu.renderer.MenuRenderer;
+import com.kprojekt.aloneinspace.MVC.menu.renderer.MenuModelRenderer;
 
 /**
  * @author Philon
  */
 public class MenuManager extends Manager
 {
-	private MenuRenderer renderer;
+	private MenuModelRenderer renderer;
 	private MenuController controller;
 
 	public MenuManager( AllData data )
 	{
-		this.renderer = new MenuRenderer( data );
+		this.renderer = new MenuModelRenderer( data );
 		this.controller = new MenuController( data.getMenuModel() );
 	}
 

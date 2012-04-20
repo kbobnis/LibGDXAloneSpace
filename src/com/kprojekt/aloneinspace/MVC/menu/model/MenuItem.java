@@ -3,9 +3,8 @@ package com.kprojekt.aloneinspace.MVC.menu.model;
 /**
  * @author Philon 
  */
-public class MenuItem
+public abstract class MenuItem
 {
-
 	private String name;
 	private boolean selected;
 	private boolean activated;
